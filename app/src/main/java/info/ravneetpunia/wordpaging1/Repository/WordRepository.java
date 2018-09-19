@@ -18,7 +18,6 @@ public class WordRepository {
     private static WordDatabase INSTANCE;
     public static final Object LOCK = new Object();
     private static Context ctx;
-    private WordDao wordDao;
 
     private WordDao mWordDao;
 
@@ -42,7 +41,7 @@ public class WordRepository {
 
     public WordRepository(Application application){
         if(INSTANCE !=null){
-            wordDao = INSTANCE.wordDao();
+            mWordDao = INSTANCE.wordDao();
         }else {
             Toast.makeText(application, "DataBase Not Found....So cant insert Word", Toast.LENGTH_SHORT).show();
         }
