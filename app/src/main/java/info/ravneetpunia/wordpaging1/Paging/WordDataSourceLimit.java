@@ -9,6 +9,7 @@ import java.util.List;
 
 import info.ravneetpunia.wordpaging1.Database.Word;
 import info.ravneetpunia.wordpaging1.Database.WordDao;
+import info.ravneetpunia.wordpaging1.Database.WordDatabase;
 import info.ravneetpunia.wordpaging1.Repository.WordRepository;
 
 public class WordDataSourceLimit extends PageKeyedDataSource<Integer, Word> {
@@ -16,7 +17,7 @@ public class WordDataSourceLimit extends PageKeyedDataSource<Integer, Word> {
     private WordDao wordDao;
 
     public WordDataSourceLimit(Context ctx){
-        wordDao = WordRepository.getDatabase(ctx).wordDao();
+        wordDao = WordDatabase.getDatabase(ctx).wordDao();
     }
 
     @Override

@@ -65,7 +65,7 @@ public class WordAdapter extends PagedListAdapter<Word, WordAdapter.WordViewHold
         }
 
         public void bindTO(Word word){
-            textView.setText(word.getWord()+" "+word.getId());
+            textView.setText(word.getWord()+"; ID:"+word.getId());
         }
     }
 }

@@ -8,6 +8,7 @@ import java.util.List;
 
 import info.ravneetpunia.wordpaging1.Database.Word;
 import info.ravneetpunia.wordpaging1.Database.WordDao;
+import info.ravneetpunia.wordpaging1.Database.WordDatabase;
 import info.ravneetpunia.wordpaging1.Repository.WordRepository;
 
 public class WordDataSource extends ItemKeyedDataSource<Integer, Word> {
@@ -15,7 +16,7 @@ public class WordDataSource extends ItemKeyedDataSource<Integer, Word> {
     private WordDao wordDao;
 
     public WordDataSource(Context context) {
-        wordDao = WordRepository.getDatabase(context).wordDao();
+        wordDao = WordDatabase.getDatabase(context).wordDao();
     }
 
     @Override
