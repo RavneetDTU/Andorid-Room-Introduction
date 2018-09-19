@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Word word = new Word(data.getStringExtra(AddWordActivity.EXTRA_REPLY));
+            Word word = new Word(Integer.parseInt(data.getStringExtra(AddWordActivity.EXTRA_ID)),data.getStringExtra(AddWordActivity.EXTRA_REPLY));
             viewModel.insert(word);
         } else {
             Toast.makeText(

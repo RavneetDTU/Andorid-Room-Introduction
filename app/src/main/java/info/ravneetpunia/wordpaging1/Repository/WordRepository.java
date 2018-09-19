@@ -1,13 +1,7 @@
 package info.ravneetpunia.wordpaging1.Repository;
 
 import android.app.Application;
-import android.arch.persistence.db.SupportSQLiteDatabase;
-import android.arch.persistence.room.Room;
-import android.arch.persistence.room.RoomDatabase;
-import android.content.Context;
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
-import android.widget.Toast;
 
 import info.ravneetpunia.wordpaging1.Database.Word;
 import info.ravneetpunia.wordpaging1.Database.WordDao;

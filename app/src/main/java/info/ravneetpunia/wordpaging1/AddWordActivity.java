@@ -11,8 +11,9 @@ import android.widget.EditText;
 public class AddWordActivity extends AppCompatActivity {
 
     public static final String EXTRA_REPLY = "com.example.android.wordlistsql.REPLY";
+    public static final String EXTRA_ID = "com.example.android.wordlistsql.ID";
 
-    private EditText mEditWordView;
+    private EditText mEditWordView, mEditID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class AddWordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_word);
 
         mEditWordView = findViewById(R.id.et_word_AddNewActvity);
+        mEditID = findViewById(R.id.et_id_AddNewActvity);
 
         final Button button = findViewById(R.id.btn_save_AddnewActvity);
         button.setOnClickListener(new View.OnClickListener() {
@@ -29,7 +31,9 @@ public class AddWordActivity extends AppCompatActivity {
                     setResult(RESULT_CANCELED, replyIntent);
                 } else {
                     String word = mEditWordView.getText().toString();
+                    String id = mEditID.getText().toString();
                     replyIntent.putExtra(EXTRA_REPLY, word);
+                    replyIntent.putExtra(EXTRA_ID,id);
                     setResult(RESULT_OK, replyIntent);
                 }
                 finish();

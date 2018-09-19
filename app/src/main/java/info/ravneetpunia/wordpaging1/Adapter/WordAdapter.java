@@ -33,7 +33,7 @@ public class WordAdapter extends PagedListAdapter<Word, WordAdapter.WordViewHold
     @Override
     public void onBindViewHolder(@NonNull WordViewHolder holder, int position) {
         Word thisWord = getItem(position);
-        Log.d(TAG, "onBindViewHolder: "+thisWord);
+        Log.d(TAG, "onBindViewHolder: "+thisWord.getId());
         if(thisWord != null){
             holder.bindTO(getItem(position));
         }

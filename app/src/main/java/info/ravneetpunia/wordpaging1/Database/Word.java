@@ -4,15 +4,16 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-@Entity
+@Entity(tableName = "word_table")
 public class Word {
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     @NonNull
     private int id;
     private String word;
 
-    public Word(String word) {
+    public Word(int id,String word) {
+        this.id = id;
         this.word = word;
     }
 
